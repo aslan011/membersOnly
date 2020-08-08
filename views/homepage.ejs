@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>Homepage</h1>
+  <form action="" method="POST">
+    <label for="firstName">New message</label>
+    <input name="messageTitle" type="text" placeholder="Title" required />
+    <input name="messageText" type="text" placeholder="Message here" required />
+    <button>Create message</button>
+  </form>
+  <a href='/logout'>Log out</a>
+  <section>
+      <% if (admin) { %>
+        <h4> You are logged in as an admin </h4>
+        <button><a href='/adminMode'>Enter admin mode</a></button>
+      <%}%>
+      <% if (messages !== null) {messages.forEach(message => {%> 
+          <h5>Title</h5>
+          <p> <%=message.title%> </p> 
+          <h5>Message</h5>
+          <p> <%=message.text%></p>
+      <%})}; %>
+          <form action="/secretCode" method="POST">
+              <label for="code">Enter secret code to see join the club and see messages</label>
+              <input name="code" type="text" required />
+              <button>Send</button>
+            </form>
+  </section>
+</body>
+</html>
