@@ -10,3 +10,5 @@ A simple messageboard app where you need to be a member to view messages
 - bcrypt/ hashing
 - passportJS
 - dotenv 
+
+Styling to be added
